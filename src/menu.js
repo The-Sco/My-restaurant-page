@@ -1,3 +1,4 @@
+/*
     appendElement(main, createElement("section", "home__main__section2", "sc2"));
     appendBySelector("#home__main__section2", createElement("div", "home__section2__information"));
     appendBySelector("#home__section2__information", createElement("h3", "home__section2__title", "", "Little About Us"));
@@ -11,3 +12,4 @@
     appendBySelector("#home__section2__images", createElement("img", "home__section2__image2", "img"));
     const image2 = main.querySelector("#home__section2__image2");
     image2.src = foodImage2;
+*/

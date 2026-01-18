@@ -1,8 +1,6 @@
 import { createElement, appendElement, appendBySelector } from "./functions";
-import foodImage1 from "./styles/assets/two.png";
-import foodImage2 from "./styles/assets/one.png";
-import windowViewImage from "./styles/assets/cafe-view.webp";
 
+import windowViewImage from "./styles/assets/cafe-view.webp";
 import meal1 from "./styles/assets/popular dishes/meal1.webp";
 import meal2 from "./styles/assets/popular dishes/meal2.webp";
 import meal4 from "./styles/assets/popular dishes/meal4.webp";
