@@ -1,0 +1,168 @@
+@font-face {
+    font-family: "Inter";
+    src: url(./assets/InterVariable.ttf);
+}
+
+/* GLOBAL STYLES */
+
+
+html {
+    font-size: 62.50%;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0px solid red;
+    font-family: "Inter", sans-serif;
+    line-height: 1;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+section {
+    padding: clamp(1.8rem, 5vw, 7rem);
+    padding-bottom: 0;
+}
+
+
+:root {
+    --main-red: #e52c34;
+    --main-white: #fcfafa;
+    --black: #111010;
+
+    --h100: clamp(3.2rem, 8vw, 10rem);
+    --h95: clamp(3rem, 7.7vw, 9.5rem);
+    --h90: clamp(2.8rem, 7.4vw, 9rem);
+    --h85: clamp(2.6rem, 7.1vw, 8.5rem);
+    --h80: clamp(2.4rem, 6.8vw, 8rem);
+    --h75: clamp(2.2rem, 6.5vw, 7.5rem);
+    --h70: clamp(2.0rem, 6vw, 7rem);
+    --h65: clamp(1.8rem, 5.5vw, 6.5rem);
+    --h60: clamp(1.6rem, 5vw, 6rem);
+    --h55: clamp(1.6rem, 4.5vw, 5.5rem);
+    --h50: clamp(1.6rem, 3.5vw, 5rem);
+    --h45: clamp(1.4rem, 3.5vw, 4.5rem);
+    --h40: clamp(1.4rem, 3vw, 4rem);
+    --h35: clamp(1.4rem, 2.3vw, 3.5rem);
+    --h30: clamp(1.2rem, 2.3vw, 3rem);
+    --h25: clamp(1.2rem, 2.1vw, 2.5rem);
+    --h20: clamp(1rem, 2vw, 2rem);
+    --h15: clamp(1rem, 1.5vw, 1.5rem);
+    --regText: clamp( 1.2rem, 3.5vw, 2.4rem);
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: 500;
+}
+
+h1 { font-size: var(--h100); }
+h2 { font-size: var(--h80); }
+h3 { font-size: var(--h60); }
+h4 { font-size: var(--h40); }
+h5 { font-size: var(--h20); }
+h6 { font-size: var(--h15); }
+
+.font100 { font-size: var(--h10); }
+.font95 { font-size: var(--h95); }
+.font90 { font-size: var(--h90); }
+.font85 { font-size: var(--h85); }
+.font80 { font-size: var(--h80); }
+.font75 { font-size: var(--h75); }
+.font70 { font-size: var(--h70); }
+.font65 { font-size: var(--h65); }
+.font60 { font-size: var(--h60); }
+.font55 { font-size: var(--h55); }
+.font50 { font-size: var(--h50); }
+.font45 { font-size: var(--h45); }
+.font40 { font-size: var(--h40); }
+.font35 { font-size: var(--h35); }
+.font30 { font-size: var(--h30); }
+.font25 { font-size: var(--h25); }
+.font20 { font-size: var(--h20); }
+.font15 { font-size: var(--h15); }
+
+.regText, p,a { font-size: var(--regText); }
+
+.accentColor { color: var(--main-red); }
+.regWhite { color: var(--main-white); }
+.regBlack { color: var(--black); }
+
+.accentButton {
+    color: var(--main-white);
+    background-color: var(--main-red);
+    padding: clamp(0.6rem, 1vw, 1.6rem) clamp(1rem, 2vw, 3.4rem);
+    font-size: var(--h30);
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.accentButton:hover {
+    background-color: #c5222a
+}
+
+
+
+/* HEADER STYLES */
+
+
+header {
+    margin: clamp(1rem, 5vw, 2.6rem) clamp(1.8rem, 5vw, 7rem)  0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#header-inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: clamp(2rem, 3vw, 3.5rem) clamp(2.6rem, 3.5vw, 5rem);
+    background-color: #000000c5;
+    color: var(--main-white);
+    border-radius: 2rem;
+}
+#header-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    backdrop-filter: blur(10px);
+}
+
+#header-logoCont {
+    flex: 1;
+}
+.header-logoSpan {
+    font-weight: 900;
+}
+
+#header-nav {
+    flex: 1;
+}
+#header-nav ul {
+    justify-self: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: clamp(12rem, 40vw, 50rem);
+    height: 100%;
+}
+.nav-button {
+    font-size: var(--regText);
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.nav-button:hover {opacity: 0.8;}
+.nav-button.active {
+    color: var(--main-red);
+}
+

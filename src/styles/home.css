@@ -1,0 +1,212 @@
+/* HOME STYLES */
+
+/* Section 1 */
+
+.section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-white);
+    
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('./assets/food.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    height: 100vh;
+}
+
+.section1-textBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.8rem, 2vw, 1.8rem);
+}
+.section1-title {
+    font-weight: 700;
+    text-align: center;
+}
+.section1-button {
+    font-weight: 400;
+    background-color: transparent;
+    color: inherit;
+    padding: clamp(0.4rem, 1vw, 0.8rem) clamp(0.8rem, 1.6vw, 2.2rem);
+    border: 2px solid var(--main-white);
+    border-radius: 1.6rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.section1-button-Bold {
+    font-weight: 600;
+}
+.section1-button:hover {
+    background-color: #cccccc18;
+}
+.section1-button:active {
+    background-color: #cccccc36;
+}
+
+/* Section 2 */
+
+.section2 {
+    display: flex;
+}
+
+.section2-imageDiv {
+    height: clamp(1px, 650px, 80vh);
+}
+.section2-image {
+    width: clamp(1vw, 50vw, 60rem);
+    height: clamp(1px, 100%, 80vh);
+    object-fit: cover;
+    border-radius: 3%;
+}
+
+.section2-information {
+    flex: 1;
+    color: var(--main-black);
+    text-align: left;
+    margin-left: 3rem;
+}
+
+.sectionTitle {
+    position: relative;
+    font-size: var(--regText);
+    font-weight: 300;
+    padding-left: 55px;
+}
+.sectionTitle::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 0;
+    display: inline-block;
+    height: 10px;
+    width: 50px;
+    border-radius: 1000px;
+    background-color: var(--main-red);
+}
+
+.section2-title {
+    font-weight: 600;
+}
+
+.section2-textDiv {
+    max-width: 100%;
+}
+.section2__text-p {
+    font-size: var(--h35);
+    font-weight: 300;
+    margin: clamp(1rem, 3vw, 2rem) 0;
+}
+
+.section2-advantagesDiv {
+    display: flex;
+    gap: clamp(2rem, 3vw, 6rem);
+    margin: clamp(0.4rem, 2vw, 3.4rem) 0;
+}
+.advantageDiv {
+    display: flex;
+    flex-direction: column;
+}
+.advantage-bold {
+    font-size: var(--h35);
+    font-weight: 600;
+}
+.advantage-regular {
+    font-size: var(--h20);
+}
+
+
+
+
+/* Section 3 */
+
+.section3 {
+    text-align: center;
+}
+
+.section3-title {
+    margin: clamp(1rem, 2vw, 2.8rem) 0;
+}
+
+.section3-dishesDiv {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.6rem;
+    width: 100%;
+}
+.cardDiv {
+    text-align: center;
+}
+.cardImage {
+    object-fit: cover;
+    height: 20vw;
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: clamp(0.6rem, 1vw, 1.4rem)
+}
+.cardTitle {
+    font-size: var(--h30);
+}
+
+@media (max-width: 768px) {
+    .section1 {
+        height: 80vh;
+    }
+    .section2-imageDiv, .section2-image {
+        height: 0px;
+        width: 0px;
+    }
+
+    .section2-information {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .sectionTitle {
+        padding-left: 45px;
+    }
+    .sectionTitle::before {
+        height: 7px;
+        width: 40px;
+        top: 50;
+    }
+    
+    .section2__text-p {
+        text-align: left;
+        line-height: 1.4;
+    }
+
+    .section2-advantagesDiv {
+        margin-top: 3rem;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+    .advantageDiv {
+        width: clamp(3rem, 15vw, 8.6rem)
+    }
+
+    .section3-dishesDiv {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+    }
+    .cardImage {
+        width: 100%;
+        height: 30vw;
+    }
+}
+@media (max-width:550px) {
+    .section2-buttonDiv, .section2-button {
+        height: 0px;
+        width: 0px;
+        visibility: hidden;
+    }
+    .section3-dishesDiv {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}
