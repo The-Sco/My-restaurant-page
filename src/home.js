@@ -1,35 +1,36 @@
 import { createElement, appendElement, appendBySelector } from "./functions";
 import foodImage1 from "./styles/assets/two.png";
 import foodImage2 from "./styles/assets/one.png";
-import windowViewImage from "./styles/assets/cafe-view.jpg";
+import windowViewImage from "./styles/assets/cafe-view.webp";
 
-import meal1 from "./styles/assets/main courses/meal1.jpg";
-import meal2 from "./styles/assets/main courses/meal2.jpg";
-import meal4 from "./styles/assets/main courses/meal4.jpg";
-import dessert2 from "./styles/assets/desserts/dessert2.jpg";
-import dessert3 from "./styles/assets/desserts/dessert3.jpg";
-import dessert6 from "./styles/assets/desserts/dessert6.jpg";
+import meal1 from "./styles/assets/popular dishes/meal1.webp";
+import meal2 from "./styles/assets/popular dishes/meal2.webp";
+import meal4 from "./styles/assets/popular dishes/meal4.webp";
+import dessert2 from "./styles/assets/popular dishes/dessert2.webp";
+import dessert3 from "./styles/assets/popular dishes/dessert3.webp";
+import dessert6 from "./styles/assets/popular dishes/dessert6.webp";
 
 
 import styles from "./styles/home.css";
 
 const main = document.querySelector("main");
 
-export default function loadHomePage() {
-    appendElement(main, createElement("section", "", "section1"));
-    
-    appendBySelector(".section1", createElement("img", "", "section1-image"));
-
+function createSection1() {
+    main.appendChild(createElement("section", "", "section1"));
 
     appendBySelector(".section1", createElement("div", "", "section1-textBlock"));
     appendBySelector(".section1-textBlock", createElement("h1", "", "section1-title", "", "<span class='section1-title'>Welcome to </span><span class='section1-title accentColor'>Food Paradise</span>"));
-    appendBySelector(".section1-textBlock", createElement("button", "", "section1-button regText", "", "<span>Explore</span><span class='section1-buttonBold'>Menu</span>"));
+    appendBySelector(".section1-textBlock", createElement("span", "", "section1-subTitle", "Delivering great food for more than 3 years!"))
+    appendBySelector(".section1-textBlock", createElement("button", "", "section1-button font30 button", "", "<span>Explore </span><span class='section1-buttonBold'>Menu</span>"));
+
     const section1_button = main.querySelector(".section1-button");
     section1_button.addEventListener("click", () => {
         console.log("done");
     });
+}
 
-    appendElement(main, createElement("section", "", "section2"));
+function createSection2() {
+    main.appendChild(createElement("section", "", "section2"));
     main.querySelector(".section2").innerHTML =
     `<div id='home__section2-imageDiv' class='section2-imageDiv'>
         <img id='home__section2-image' class='section2-image' src="${windowViewImage}">
@@ -43,8 +44,8 @@ export default function loadHomePage() {
             </span>
         </div>
 
-        <div id='home__section2-title' class='section2-titleDiv'>
-            <h3 class="section2-title">We invite you to visit</h3>
+        <div id='home__section2-title' class='section2-titleDiv section-titleDiv'>
+            <span class="section2-title section-title font50">We invite you to visit</span>
         </div>
 
         <div id='home__section2-text' class='section2-textDiv'>
@@ -58,11 +59,11 @@ export default function loadHomePage() {
                 <span class='advantage-regular regText'>Experience</span>
             </div>
             <div class='advantageDiv'>
-                <h6 class='advantage-bold'>200+</h6>
+                <span class='advantage-bold'>200+</span>
                 <span class='advantage-regular regText'>Daily Visitors</span>
             </div>
             <div class='advantageDiv'>
-                <h6 class='advantage-bold'>100%</h6>
+                <span class='advantage-bold'>100%</span>
                 <span class='advantage-regular regText'>Positive Feedback</span>
             </div>
         </div>
@@ -70,18 +71,19 @@ export default function loadHomePage() {
         <div id='home__section2-buttonDiv' class='section2-buttonDiv'>
             <button class="section2-button accentButton">Know more</button>
         </div>
-    </div>
-    `;
+    </div>`;
+}
 
-    appendElement(main, createElement("section", "", "section3"));
+function createSection3() {
+    main.appendChild(createElement("section", "", "section3"));
     main.querySelector(".section3").innerHTML = 
     `<div class='section3-sectionTitleDiv sectionTitleDiv'>
         <span class='section3-sectionTitle sectionTitle'
             <span class='section3__sectionTitle-text sectionTitle-text'>Special</span>
         </span>
     </div>
-    <div class='section3-titleDiv'>
-        <h4 class='section3-title font45'>Taste Our Popular Dishes<h4>
+    <div class='section3-titleDiv section-titleDiv'>
+        <span class='section3-title section-title'>Taste Our Popular Dishes<span>
     </div>
     <div class='section3-dishesDiv '>
         <div class="cardDiv cardDiv1">
@@ -109,8 +111,78 @@ export default function loadHomePage() {
             <span class="cardTitle">Strawberry Cheesecake</span>
         </div>
     </div>`;
+}
+
+function createSection4() {
     main.appendChild(createElement("section", "", "section4"));
     main.querySelector(".section4").innerHTML =
+    `<div class="section4-leftDiv">
+        <div class="section4__leftDiv-textBlock">
+            <div class='section4-sectionTitleDiv sectionTitleDiv'>
+                <span class='section4-sectionTitle sectionTitle'
+                    <span class='section4__sectionTitle-text sectionTitle-text'>About Us</span>
+                </span>
+            </div>
+            <div class="section4__leftDiv-titleDiv section-titleDiv">
+                <span class="section4__leftDiv-title section-title">Working Hours</span>
+            </div>
+            <div class="section4__leftDiv-subContent">
+                <div class="section4__leftDidv-buttonDiv">
+                    <button type="button" class="section4__leftDiv-button accentButton">Reservation</button>
+                </div>
+                <div class="section4__leftDiv-contactUsDiv">
+                    <a href="#" class="section4__leftDiv-contactUs">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section4-rightDiv">
+        <div class="section4__rightDiv-textBlock">
+            <div class="section4__rightDiv-hoursDiv">
+                <div class="section4__rightdiv-hours1 hoursDiv">
+                    <span class="hours-title">Monday To Firday</span>
+                    <span class="hours-time">11 00</span>
+                    <spam class="hours-time">10 00</span>
+                </div>
+                <div class="section4__rightDiv-hours2 hoursDiv">
+                    <span class="hours-title">Saturday To Sunday</span>
+                    <span class="hours-time">11 00</span>
+                    <spam class="hours-time">10 00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+}
+
+function createSection5() {
+    main.appendChild(createElement("section", "", "section5"));
+    main.querySelector(".section5").innerHTML =
+    `<div class="section5-offersDiv">
+        <div class="offerDiv">
+            <span class="offer-title">200+</span>
+            <span class="offer-text">Visitors Daily</span>
+        </div>
+        <div class="offerDiv">
+            <span class="offer-title">100%</span>
+            <span class="offer-text">Positive Reviewsv</span>
+        </div>
+        <div class="offerDiv">
+            <span class="offer-title">3+</span>
+            <span class="offer-text">Experience</span>
+        </div>
+        <div class="offerDiv">
+            <span class="offer-title">40+</span>
+            <span class="offer-text">Awards</span>
+        </div>
+    </div>
     `
-    `
+}
+
+export default function loadHomePage() {
+    createSection1();
+    createSection2();
+    createSection3();
+    createSection4();
+    createSection5();
 }

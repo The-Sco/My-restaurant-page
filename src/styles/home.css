@@ -1,5 +1,39 @@
 /* HOME STYLES */
 
+.button {
+    font-weight: 400;
+    background-color: transparent;
+    padding: clamp(0.4rem, 1vw, 0.8rem) clamp(0.8rem, 1.6vw, 2.2rem);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sectionTitle {
+    position: relative;
+    font-size: var(--h30);
+    font-weight:300;
+    padding-left: 55px;
+}
+.sectionTitle::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 0;
+    display: inline-block;
+    height: 7px;
+    width: 45px;
+    border-radius: 1000px;
+    background-color: var(--main-red);
+}
+
+.section-titleDiv {
+    margin: clamp(1rem, 1.5vw, 3rem) 0;
+}
+.section-title {
+    font-size: var(--h45);
+    font-weight: 600;
+}
+
 /* Section 1 */
 
 .section1 {
@@ -10,7 +44,7 @@
     
     background-image: 
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('./assets/food.jpeg');
+    url('./assets/food.webp');
     
     background-size: cover;
     background-position: center;
@@ -29,17 +63,15 @@
     font-weight: 700;
     text-align: center;
 }
+.section1-subTitle {
+    font-size: var(--h35);
+}
 .section1-button {
-    font-weight: 400;
-    background-color: transparent;
     color: inherit;
-    padding: clamp(0.4rem, 1vw, 0.8rem) clamp(0.8rem, 1.6vw, 2.2rem);
     border: 2px solid var(--main-white);
     border-radius: 1.6rem;
-    cursor: pointer;
-    transition: all 0.2s;
 }
-.section1-button-Bold {
+.section1-buttonBold {
     font-weight: 600;
 }
 .section1-button:hover {
@@ -56,10 +88,10 @@
 }
 
 .section2-imageDiv {
-    height: clamp(1px, 650px, 80vh);
+    height: clamp(1px, 630px, 80vh);
 }
 .section2-image {
-    width: clamp(1vw, 50vw, 60rem);
+    width: clamp(1vw, 50vw, 70rem);
     height: clamp(1px, 100%, 80vh);
     object-fit: cover;
     border-radius: 3%;
@@ -72,33 +104,8 @@
     margin-left: 3rem;
 }
 
-.sectionTitle {
-    position: relative;
-    font-size: var(--regText);
-    font-weight: 300;
-    padding-left: 55px;
-}
-.sectionTitle::before {
-    content: "";
-    position: absolute;
-    top: 40%;
-    left: 0;
-    display: inline-block;
-    height: 10px;
-    width: 50px;
-    border-radius: 1000px;
-    background-color: var(--main-red);
-}
-
-.section2-title {
-    font-weight: 600;
-}
-
-.section2-textDiv {
-    max-width: 100%;
-}
 .section2__text-p {
-    font-size: var(--h35);
+    font-size: var(--h30);
     font-weight: 300;
     margin: clamp(1rem, 3vw, 2rem) 0;
 }
@@ -111,13 +118,14 @@
 .advantageDiv {
     display: flex;
     flex-direction: column;
+    gap: 0.4rem
 }
 .advantage-bold {
-    font-size: var(--h35);
+    font-size: var(--h40);
     font-weight: 600;
 }
 .advantage-regular {
-    font-size: var(--h20);
+    font-size: var(--h25);
 }
 
 
@@ -153,9 +161,111 @@
     font-size: var(--h30);
 }
 
+
+
+/* Section 4 */
+
+.section4 {
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0 10px 8px -10px rgba(0, 0, 0, 0.178);
+}    
+
+
+.section4-leftDiv {
+    flex: 1;
+    flex-grow: 10;
+    display: flex;
+    align-items: center;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('./assets/hours-background.webp');
+    background-size: cover;
+    background-position: center;
+    color: var(--main-white);
+    padding: clamp(1rem, 4vw, 10rem) clamp(0.4rem, 5vw, 14rem);
+    padding-right: 0;
+}
+
+.section4__leftDiv-titleDiv {
+    margin-top: clamp(1rem, 1vw, 2rem);
+    margin-bottom: clamp(1rem, 5vw, 4rem);
+}
+
+.section4__leftDiv-subContent {
+    display: flex;
+    align-items: center;
+    gap: 2rem
+}
+
+.section4__leftDiv-contactUs {
+    display: block;
+    font-size: var(--h20);
+    text-align: center;
+    font-weight: 300;
+    opacity: 0.8;
+}
+.section4__leftDiv-contactUs:hover { opacity: 1; }
+
+.section4-rightDiv {
+    flex: 1;
+    flex-grow: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(1rem, 4vw, 10rem) 0;
+}
+.section4__rightDiv-hoursDiv {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.6rem, 2vw, 2.8rem);
+}
+
+.hoursDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.6rem, 1vw, 1.6rem);
+    font-size: clamp(0.8rem, 2vw, 2.6rem)
+}
+.hours-title {
+    font-weight: 300;
+}
+.hours-time {
+    font-weight: 500;
+}
+
+
+/* Section5 */
+
+.section5-offersDiv {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: clamp(2.4rem, 7vw, 10rem);
+}
+.offerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.4rem, 1vw, 2rem);
+}
+.offer-title {
+    font-size: var(--h40);
+    font-weight: 600;
+}
+.offer-text {
+    font-size: var(--h30);
+    font-weight: 400;
+}
+
 @media (max-width: 768px) {
     .section1 {
-        height: 80vh;
+        height: 70vh;
+    }
+    .section1-button {
+        border: 1px solid var(--main-white);
     }
     .section2-imageDiv, .section2-image {
         height: 0px;
@@ -171,18 +281,17 @@
         padding-left: 45px;
     }
     .sectionTitle::before {
-        height: 7px;
         width: 40px;
         top: 50;
     }
     
     .section2__text-p {
         text-align: left;
-        line-height: 1.4;
+        line-height: 1.2;
     }
 
     .section2-advantagesDiv {
-        margin-top: 3rem;
+        margin-top: clamp(1rem, 2vw, 3rem);
         justify-content: space-evenly;
         gap: 0;
     }
@@ -200,6 +309,14 @@
     }
 }
 @media (max-width:550px) {
+    .sectionTitle {
+        padding-left: 35px;
+    }
+    .sectionTitle::before {
+        height: 4px;
+        width: 30px;
+    }
+    .section2-advantagesDiv { margin-bottom: 0; }
     .section2-buttonDiv, .section2-button {
         height: 0px;
         width: 0px;
@@ -209,4 +326,12 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
     }
+    .cardImage {
+        border-radius: 20px;
+        height: 40vw;
+    }
+    .section4-leftDiv { 
+        flex-grow: 5;
+    }
+    .section4-rightDiv { flex-grow: 6; }
 }

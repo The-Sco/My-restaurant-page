@@ -6,9 +6,7 @@
 /* GLOBAL STYLES */
 
 
-html {
-    font-size: 62.50%;
-}
+html { font-size: 62.50%; }
 * {
     box-sizing: border-box;
     padding: 0;
@@ -25,7 +23,7 @@ a {
     color: inherit;
 }
 section {
-    padding: clamp(1.8rem, 5vw, 7rem);
+    padding: clamp(2.4rem, 7vw, 10rem) clamp(1.8rem, 5vw, 7rem);
     padding-bottom: 0;
 }
 
@@ -35,25 +33,25 @@ section {
     --main-white: #fcfafa;
     --black: #111010;
 
-    --h100: clamp(3.2rem, 8vw, 10rem);
-    --h95: clamp(3rem, 7.7vw, 9.5rem);
-    --h90: clamp(2.8rem, 7.4vw, 9rem);
-    --h85: clamp(2.6rem, 7.1vw, 8.5rem);
-    --h80: clamp(2.4rem, 6.8vw, 8rem);
-    --h75: clamp(2.2rem, 6.5vw, 7.5rem);
-    --h70: clamp(2.0rem, 6vw, 7rem);
-    --h65: clamp(1.8rem, 5.5vw, 6.5rem);
-    --h60: clamp(1.6rem, 5vw, 6rem);
-    --h55: clamp(1.6rem, 4.5vw, 5.5rem);
-    --h50: clamp(1.6rem, 3.5vw, 5rem);
-    --h45: clamp(1.4rem, 3.5vw, 4.5rem);
-    --h40: clamp(1.4rem, 3vw, 4rem);
-    --h35: clamp(1.4rem, 2.3vw, 3.5rem);
-    --h30: clamp(1.2rem, 2.3vw, 3rem);
-    --h25: clamp(1.2rem, 2.1vw, 2.5rem);
-    --h20: clamp(1rem, 2vw, 2rem);
-    --h15: clamp(1rem, 1.5vw, 1.5rem);
-    --regText: clamp( 1.2rem, 3.5vw, 2.4rem);
+    --h100: clamp(2.8rem, 8vw, 10rem);
+    --h95: clamp(2.4rem, 7.7vw, 9.5rem);
+    --h90: clamp(2.2rem, 7.4vw, 9rem);
+    --h85: clamp(2rem, 7.1vw, 8.5rem);
+    --h80: clamp(1.8rem, 6.8vw, 8rem);
+    --h75: clamp(1.8rem, 6.5vw, 7.5rem);
+    --h70: clamp(1.6rem, 6vw, 7rem);
+    --h65: clamp(1.6rem, 5.5vw, 6.5rem);
+    --h60: clamp(1.4rem, 5vw, 6rem);
+    --h55: clamp(1.4rem, 4.5vw, 5.5rem);
+    --h50: clamp(1.4rem, 3.5vw, 5rem);
+    --h45: clamp(1.2rem, 3.5vw, 4.5rem);
+    --h40: clamp(1.2rem, 3vw, 4rem);
+    --h35: clamp(1.2rem, 2.3vw, 3.5rem);
+    --h30: clamp(1rem, 2.3vw, 3rem);
+    --h25: clamp(0.8rem, 2.3vw, 2.5rem);
+    --h20: clamp(0.8rem, 2.3vw, 2rem);
+    --h15: clamp(0.6rem, 2.3vw, 1.8rem);
+    --regText: clamp( 1.2rem, 2.15vw, 2.4rem);
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -95,8 +93,8 @@ h6 { font-size: var(--h15); }
 .accentButton {
     color: var(--main-white);
     background-color: var(--main-red);
-    padding: clamp(0.6rem, 1vw, 1.6rem) clamp(1rem, 2vw, 3.4rem);
-    font-size: var(--h30);
+    padding: clamp(0.4rem, 1vw, 1.6rem) clamp(0.6rem, 1.5vw, 3.4rem);
+    font-size: var(--h20);
     border-radius: 0.8rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -126,6 +124,7 @@ header {
     background-color: #000000c5;
     color: var(--main-white);
     border-radius: 2rem;
+    overflow: hidden;
 }
 #header-inner::before {
     content: "";
@@ -142,6 +141,7 @@ header {
     flex: 1;
 }
 .header-logoSpan {
+    font-size: var(--h45);
     font-weight: 900;
 }
 
@@ -157,7 +157,7 @@ header {
     height: 100%;
 }
 .nav-button {
-    font-size: var(--regText);
+    font-size: var(--h25);
     font-weight: 500;
     transition: all 0.3s;
 }
@@ -166,3 +166,60 @@ header {
     color: var(--main-red);
 }
 
+
+/* Footer */
+
+
+footer {
+    background-color: var(--main-red);
+    color: var(--main-white);
+    padding: clamp(2.4rem, 7vw, 10rem) clamp(1.8rem, 5vw, 7rem);
+
+}
+.footer-contentDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: clamp(1.2rem, 2vw, 6rem);
+}
+.footer-navDiv {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 1.4vw, 2.8rem);
+}
+.footer-title {
+    font-size: clamp(1.8rem, 2vw, 3rem);
+    font-weight: 500
+}
+.footer-linksUl {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 1vw, 1.8rem);
+}
+.footer-link, .footer-link-a {
+    font-size: clamp(1.4rem, 1.5vw, 2.2rem);
+    font-weight: 300;
+}
+.footer-link i {
+    width: 5px;
+    margin-right: clamp(1.4rem, 2.5vw, 2.8rem);
+}
+hr {
+  border: none;
+  border-top: 2px solid #fcfafa30;
+  overflow: visible;
+  height: 5px;
+}
+
+@media (max-width:430px) {
+    .footer-contentDiv {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 0;
+    }
+    .footer-navDiv {
+        flex: 1;
+        border-bottom: 2px solid #fcfafa30;
+        padding: 1.4rem 0;
+    }
+}
