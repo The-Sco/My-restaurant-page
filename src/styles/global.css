@@ -13,7 +13,6 @@ html { font-size: 62.50%; }
     margin: 0;
     border: 0px solid red;
     font-family: "Inter", sans-serif;
-    line-height: 1;
 }
 ul {
     list-style: none;
@@ -23,7 +22,7 @@ a {
     color: inherit;
 }
 section {
-    padding: clamp(2.4rem, 7vw, 10rem) clamp(1.8rem, 5vw, 7rem);
+    padding: clamp(2.4rem, 7vw, 10rem) clamp(1.8rem, 5vw, 4.8rem);
     padding-bottom: 0;
 }
 
@@ -33,58 +32,32 @@ section {
     --main-white: #fcfafa;
     --black: #111010;
 
-    --h100: clamp(2.8rem, 8vw, 10rem);
-    --h95: clamp(2.4rem, 7.7vw, 9.5rem);
-    --h90: clamp(2.2rem, 7.4vw, 9rem);
-    --h85: clamp(2rem, 7.1vw, 8.5rem);
-    --h80: clamp(1.8rem, 6.8vw, 8rem);
-    --h75: clamp(1.8rem, 6.5vw, 7.5rem);
-    --h70: clamp(1.6rem, 6vw, 7rem);
-    --h65: clamp(1.6rem, 5.5vw, 6.5rem);
-    --h60: clamp(1.4rem, 5vw, 6rem);
-    --h55: clamp(1.4rem, 4.5vw, 5.5rem);
-    --h50: clamp(1.4rem, 3.5vw, 5rem);
-    --h45: clamp(1.2rem, 3.5vw, 4.5rem);
-    --h40: clamp(1.2rem, 3vw, 4rem);
-    --h35: clamp(1.2rem, 2.3vw, 3.5rem);
-    --h30: clamp(1rem, 2.3vw, 3rem);
-    --h25: clamp(0.8rem, 2.3vw, 2.5rem);
-    --h20: clamp(0.8rem, 2.3vw, 2rem);
-    --h15: clamp(0.6rem, 2.3vw, 1.8rem);
-    --regText: clamp( 1.2rem, 2.15vw, 2.4rem);
+    --text-basis-size: clamp(0.6rem, 1.2vw + 0.8rem, 2.4rem);
+    --scale-ratio: 1.20;
+
+    --font15: calc(var(--text-basis-size) / var(--scale-ratio));
+    --font25: calc(var(--text-basis-size) * var(--scale-ratio));
+    --font30: calc(var(--font25) * var(--scale-ratio));
+    --font35: calc(var(--font30) * var(--scale-ratio));
+    --font40: calc(var(--font35) * var(--scale-ratio));
+    --font45: calc(var(--font40) * var(--scale-ratio));
+    --font50: calc(var(--font45) * var(--scale-ratio));
 }
 
-h1,h2,h3,h4,h5,h6{
-    font-weight: 500;
+h1 { font-size: var(--font50); }
+h2 { font-size: var(--font40); }
+h3 { font-size: var(--font30); }
+h4 { font-size: var(--text-basis-size); }
+h5 { font-size: var(--font15); }
+
+h1, h2, h3, h4, h5 {
+    line-height: 1;
 }
 
-h1 { font-size: var(--h100); }
-h2 { font-size: var(--h80); }
-h3 { font-size: var(--h60); }
-h4 { font-size: var(--h40); }
-h5 { font-size: var(--h20); }
-h6 { font-size: var(--h15); }
-
-.font100 { font-size: var(--h10); }
-.font95 { font-size: var(--h95); }
-.font90 { font-size: var(--h90); }
-.font85 { font-size: var(--h85); }
-.font80 { font-size: var(--h80); }
-.font75 { font-size: var(--h75); }
-.font70 { font-size: var(--h70); }
-.font65 { font-size: var(--h65); }
-.font60 { font-size: var(--h60); }
-.font55 { font-size: var(--h55); }
-.font50 { font-size: var(--h50); }
-.font45 { font-size: var(--h45); }
-.font40 { font-size: var(--h40); }
-.font35 { font-size: var(--h35); }
-.font30 { font-size: var(--h30); }
-.font25 { font-size: var(--h25); }
-.font20 { font-size: var(--h20); }
-.font15 { font-size: var(--h15); }
-
-.regText, p,a { font-size: var(--regText); }
+.regText, p,a {
+    font-size: var(--text-basis-size);
+    line-height: 1.3;
+}
 
 .accentColor { color: var(--main-red); }
 .regWhite { color: var(--main-white); }
@@ -94,7 +67,7 @@ h6 { font-size: var(--h15); }
     color: var(--main-white);
     background-color: var(--main-red);
     padding: clamp(0.4rem, 1vw, 1.6rem) clamp(0.6rem, 1.5vw, 3.4rem);
-    font-size: var(--h20);
+    font-size: var(--font15);
     border-radius: 0.8rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -103,6 +76,39 @@ h6 { font-size: var(--h15); }
     background-color: #c5222a
 }
 
+.button {
+    font-weight: 400;
+    background-color: transparent;
+    padding: clamp(0.4rem, 1vw, 0.8rem) clamp(0.8rem, 1.6vw, 2.2rem);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sectionTitle {
+    position: relative;
+    font-size: var(--font25);
+    font-weight:300;
+    padding-left: 55px;
+}
+.sectionTitle::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 0;
+    display: inline-block;
+    height: 7px;
+    width: 45px;
+    border-radius: 1000px;
+    background-color: var(--main-red);
+}
+
+.section-titleDiv {
+    margin: clamp(1rem, 1.5vw, 3rem) 0 clamp(1.2rem, 2.3vw, 3.8rem);
+}
+.section-title {
+    font-size: var(--font35);
+    font-weight: 600;
+}
 
 
 /* HEADER STYLES */
@@ -141,7 +147,7 @@ header {
     flex: 1;
 }
 .header-logoSpan {
-    font-size: var(--h45);
+    font-size: var(--font30);
     font-weight: 900;
 }
 
@@ -157,7 +163,7 @@ header {
     height: 100%;
 }
 .nav-button {
-    font-size: var(--h25);
+    font-size: var(--text-basis-size);
     font-weight: 500;
     transition: all 0.3s;
 }
@@ -170,17 +176,28 @@ header {
 /* Footer */
 
 
+hr {
+  border: none;
+  border-top: 2px solid #fcfafa30;
+  overflow: visible;
+  height: 5px;
+}
+
 footer {
     background-color: var(--main-red);
     color: var(--main-white);
-    padding: clamp(2.4rem, 7vw, 10rem) clamp(1.8rem, 5vw, 7rem);
+    padding: clamp(2.4rem, 5vw, 10rem) clamp(1.8rem, 5vw, 7rem);
 
+}
+footer > hr {
+    margin-bottom: 3rem;
 }
 .footer-contentDiv {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: clamp(1.2rem, 2vw, 6rem);
+    max-width: 80vw;
+    margin: auto;
 }
 .footer-navDiv {
     display: flex;
@@ -188,7 +205,7 @@ footer {
     gap: clamp(0.8rem, 1.4vw, 2.8rem);
 }
 .footer-title {
-    font-size: clamp(1.8rem, 2vw, 3rem);
+    font-size: var(--font25);
     font-weight: 500
 }
 .footer-linksUl {
@@ -197,25 +214,30 @@ footer {
     gap: clamp(0.8rem, 1vw, 1.8rem);
 }
 .footer-link, .footer-link-a {
-    font-size: clamp(1.4rem, 1.5vw, 2.2rem);
+    font-size: var(--text-basis-size);
     font-weight: 300;
 }
 .footer-link i {
     width: 5px;
     margin-right: clamp(1.4rem, 2.5vw, 2.8rem);
 }
-hr {
-  border: none;
-  border-top: 2px solid #fcfafa30;
-  overflow: visible;
-  height: 5px;
+
+
+@media (max-width: 550px) {
+    .footer-contentDiv { max-width: 100%; }
 }
 
 @media (max-width:430px) {
+    footer {
+        padding-top: clamp(2.4rem, 14vw, 20rem);
+        padding-bottom: clamp(2.4rem, 14vw, 20rem);
+    }
+    footer > hr { margin: 0; }
+
     .footer-contentDiv {
         flex-direction: column;
         align-items: stretch;
-        margin-top: 0;
+        margin: 0;
     }
     .footer-navDiv {
         flex: 1;

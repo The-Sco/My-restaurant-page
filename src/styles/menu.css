@@ -1,5 +1,168 @@
+/* Menu styles */
 
-/* Section 2 */
+/* Section1 */
+
+[data-page="menu"] .section1 {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("./assets/menu/menu-background.webp");
+}
+
+
+/* Section2 */
+
+
+[data-page="menu"] .section2 {
+    padding: clamp(3rem, 5vw, 7rem) clamp(2.5rem, 4vw, 4rem);
+}
+
+[data-page="menu"] .section2-contentDiv {
+    display: grid;
+    grid-template-areas: "images text";
+    gap: clamp(1rem, 3vw, 5rem)
+}
+
+[data-page="menu"] .section2-imagesDiv {
+    grid-area: images;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+[data-page="menu"] .section2-image {
+    height: min-content;
+    width: 48%;
+    object-fit: cover;
+    border-radius: 100%;
+} 
+
+[data-page="menu"] .section2-informationDiv {
+    grid-area: text;
+    flex: 1;
+}
+
+[data-page="menu"] .section2-titleDiv {
+    text-align: center;
+    margin-top: 0;
+}
+
+[data-page="menu"] .section2-textDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+[data-page="menu"] .section2-text { max-inline-size: 58ch; }
+
+
+/* Section3 */
+
+
+[data-page="menu"] .section3 {
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+        url("./assets/menu/section3-background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--main-white);
+    padding: clamp(2rem, 4vw, 5rem) clamp(2.5rem, 4vw, 4rem) clamp(3rem, 10vw, 12rem);
+
+}
+[data-page="menu"] .section3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    z-index: 1;
+}
+
+[data-page="menu"] .section3-contentDiv {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+[data-page="menu"] .section3-titleDiv { margin-top: 0; }
+
+[data-page="menu"] .section3-title {
+    position: relative;
+}
+[data-page="menu"] .section3-title::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 0;
+    height: clamp(5px, 1vw, 7px);
+    width: clamp(30px, 5vw, 50px);
+    border-radius: 100px;
+    background-color: var(--main-red);
+    transform: translate(-120%);
+}
+[data-page="menu"] .section3-title::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    right: 0;
+    height: clamp(5px, 1vw, 7px);
+    width: clamp(30px, 5vw, 50px);
+    border-radius: 100px;
+    background-color: var(--main-red);
+    transform: translate(120%);   
+}
+
+[data-page="menu"] .section3-cardsDiv {
+    display: flex;
+    justify-content: space-evenly;
+    width: clamp(0%, 100%, 130rem);
+    margin-top: 0.8rem;
+}
+
+[data-page="menu"] .section3__card-image {
+    width: clamp(0%, 23vw, 32rem);
+    height: clamp(0%, 30vw, 42rem);
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+[data-page="menu"] .section3__card-titleDiv { margin-top: clamp(0.4rem, 1vw, 2rem); }
+
+[data-page="menu"] .section3__card-title {
+    font-size: var(--font25);
+}
+
+@media (max-width:1200px) {
+    [data-page="menu"] .section2-contentDiv {
+        grid-template-areas: 
+        "text"
+        "images";
+        gap: 3rem;
+    }
+    [data-page="menu"] .section2-imagesDiv { 
+        justify-content: center;
+        gap: clamp(1rem, 3vw, 3rem);
+    }
+    [data-page="menu"] .section2-image { width: 38%; }
+}
+@media (max-width:768px) {
+    [data-page="menu"] .section2-image { width: 42%; }
+}
+@media (max-width:550px) {
+    [data-page="menu"] .section2-contentDiv { gap: 1.6rem; }
+    [data-page="menu"] .section2-image { width: 48% }
+    [data-page="menu"] .section2-imagesDiv { justify-content: space-between; }
+    [data-page="menu"] .section3-cardsDiv { justify-content: space-around; }
+}
+
+
+
+/* Section 2 
 
 .section2, .main__section2 * { border: 0px solid red; }
 .section2 {
@@ -70,3 +233,4 @@
         width: clamp(12rem, 40vw, 35rem);
     }
 }
+*/

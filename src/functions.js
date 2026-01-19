@@ -1,3 +1,6 @@
+import loadHomePage from "./home";
+import loadMenuPage from "./menu";
+
 export function createElement(tag, id="", classes="", text="", innerHTML="", href="") {
     const element = document.createElement(tag);
     if (id) element.id = id;
@@ -15,10 +18,52 @@ export function appendBySelector(parentSelector, element) {
     parent.appendChild(element);
 }
 
-export function activateButton(clickedButton) {
-    const navButtons = document.querySelectorAll(".navButton");
+export function addButtosnActivation(clickedButton) {
+    const navButtons = document.querySelectorAll(".nav-button");
     navButtons.forEach(button => {
         button.classList.remove("active");
     })
-    clickedButton.classList.add("active");
+    clickedButton.classList.add("active");    
+}
+
+export function changeActiveButton() {
+    const navButtons = document.querySelectorAll(".nav-button");
+    const page = document.querySelector("main").dataset.page;
+    navButtons.forEach(button => {
+        button.classList.remove("active");
+    })
+    console.log(`.nav-${page}`)
+    document.querySelector(`header .nav-${page}`).classList.add("active"); 
+}
+
+export function addNavigation() {
+    const navHome = document.querySelectorAll("main .nav-home");
+    if (navHome) {
+        navHome.forEach(nav => {
+            nav.addEventListener("click", () => {
+                loadHomePage()
+                changeActiveButton();
+            });
+        });
+    }
+    const navMenu = document.querySelectorAll("main .nav-menu");
+    if (navMenu) {
+        navMenu.forEach(nav => {
+            nav.addEventListener("click", () => {
+                loadMenuPage();
+                changeActiveButton();
+            });
+        });
+    }
+}
+
+export function addHeaderNavigation() {
+    document.querySelector("header .nav-home").addEventListener("click", () => {
+        console.log("header-home");
+        loadHomePage();
+    })
+    document.querySelector("header .nav-menu").addEventListener("click", () => {
+        console.log("header-menu");
+        loadMenuPage();
+    })
 }

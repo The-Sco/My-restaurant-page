@@ -1,9 +1,12 @@
 import style from "./styles/global.css"
-import { activateButton } from "./functions";
+import { addNavigation } from "./functions";
 import createNavBar from "./header-footer";
 import loadHomePage from "./home";
+import loadMenuPage from "./menu"
 
-window.location.hash = "Home";
+window.location.hash = "home";
+
+
 
 createNavBar();
-loadHomePage();
+loadMenuPage();

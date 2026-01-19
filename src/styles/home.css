@@ -1,42 +1,8 @@
 /* HOME STYLES */
 
-.button {
-    font-weight: 400;
-    background-color: transparent;
-    padding: clamp(0.4rem, 1vw, 0.8rem) clamp(0.8rem, 1.6vw, 2.2rem);
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.sectionTitle {
-    position: relative;
-    font-size: var(--h30);
-    font-weight:300;
-    padding-left: 55px;
-}
-.sectionTitle::before {
-    content: "";
-    position: absolute;
-    top: 40%;
-    left: 0;
-    display: inline-block;
-    height: 7px;
-    width: 45px;
-    border-radius: 1000px;
-    background-color: var(--main-red);
-}
-
-.section-titleDiv {
-    margin: clamp(1rem, 1.5vw, 3rem) 0;
-}
-.section-title {
-    font-size: var(--h45);
-    font-weight: 600;
-}
-
 /* Section 1 */
 
-.section1 {
+ .section1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,82 +16,84 @@
     background-position: center;
     background-repeat: no-repeat;
     
-    height: 100vh;
+    height: 80vh;
 }
 
-.section1-textBlock {
+[data-page="home"] .section1-textBlock {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: clamp(0.8rem, 2vw, 1.8rem);
 }
-.section1-title {
+[data-page="home"]  .section1-title {
     font-weight: 700;
-    text-align: center;
 }
-.section1-subTitle {
-    font-size: var(--h35);
+[data-page="home"] .section1-subTitle {
+    font-size: var(--font25);
 }
-.section1-button {
+[data-page="home"] .section1-button {
     color: inherit;
+    font-size: var(--font15);
     border: 2px solid var(--main-white);
     border-radius: 1.6rem;
 }
-.section1-buttonBold {
+[data-page="home"] .section1-buttonBold {
     font-weight: 600;
 }
-.section1-button:hover {
+[data-page="home"] .section1-button:hover {
     background-color: #cccccc18;
 }
-.section1-button:active {
+[data-page="home"] .section1-button:active {
     background-color: #cccccc36;
 }
 
 /* Section 2 */
 
-.section2 {
+[data-page="home"] .section2 {
     display: flex;
 }
 
-.section2-imageDiv {
-    height: clamp(1px, 630px, 80vh);
+[data-page="home"] .section2-imageDiv {
+    height: clamp(1px, 700px, 80vh);
 }
-.section2-image {
+[data-page="home"] .section2-image {
     width: clamp(1vw, 50vw, 70rem);
     height: clamp(1px, 100%, 80vh);
     object-fit: cover;
     border-radius: 3%;
 }
 
-.section2-information {
+[data-page="home"] .section2-information {
     flex: 1;
     color: var(--main-black);
     text-align: left;
     margin-left: 3rem;
 }
 
-.section2__text-p {
-    font-size: var(--h30);
+[data-page="home"] .section2__text-p {
+    font-size: var(--font25);
     font-weight: 300;
+    max-inline-size: 58ch;
     margin: clamp(1rem, 3vw, 2rem) 0;
 }
 
-.section2-advantagesDiv {
+[data-page="home"] .section2-advantagesDiv {
     display: flex;
     gap: clamp(2rem, 3vw, 6rem);
     margin: clamp(0.4rem, 2vw, 3.4rem) 0;
 }
-.advantageDiv {
+[data-page="home"] .advantageDiv {
     display: flex;
     flex-direction: column;
     gap: 0.4rem
 }
-.advantage-bold {
-    font-size: var(--h40);
+[data-page="home"] .advantage-bold {
+    font-size: var(--font30);
     font-weight: 600;
 }
-.advantage-regular {
-    font-size: var(--h25);
+[data-page="home"] .advantage-regular {
+    font-size: var(--text-basis-size);
 }
 
 
@@ -133,39 +101,39 @@
 
 /* Section 3 */
 
-.section3 {
+[data-page="home"] .section3 {
     text-align: center;
 }
 
-.section3-title {
+[data-page="home"] .section3-title {
     margin: clamp(1rem, 2vw, 2.8rem) 0;
 }
 
-.section3-dishesDiv {
+[data-page="home"] .section3-dishesDiv {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1.6rem;
     width: 100%;
 }
-.cardDiv {
+[data-page="home"] .cardDiv {
     text-align: center;
 }
-.cardImage {
+[data-page="home"] .cardImage {
     object-fit: cover;
     height: 20vw;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 10px;
     margin-bottom: clamp(0.6rem, 1vw, 1.4rem)
 }
-.cardTitle {
-    font-size: var(--h30);
+[data-page="home"] .cardTitle {
+    font-size: var(--text-basis-size);
 }
 
 
 
 /* Section 4 */
 
-.section4 {
+[data-page="home"] .section4 {
     display: flex;
     padding-left: 0;
     padding-right: 0;
@@ -173,7 +141,7 @@
 }    
 
 
-.section4-leftDiv {
+[data-page="home"] .section4-leftDiv {
     flex: 1;
     flex-grow: 10;
     display: flex;
@@ -185,30 +153,30 @@
     background-position: center;
     color: var(--main-white);
     padding: clamp(1rem, 4vw, 10rem) clamp(0.4rem, 5vw, 14rem);
-    padding-right: 0;
+    padding-right: 1rem;
 }
 
-.section4__leftDiv-titleDiv {
+[data-page="home"] .section4__leftDiv-titleDiv {
     margin-top: clamp(1rem, 1vw, 2rem);
     margin-bottom: clamp(1rem, 5vw, 4rem);
 }
 
-.section4__leftDiv-subContent {
+[data-page="home"] .section4__leftDiv-subContent {
     display: flex;
     align-items: center;
     gap: 2rem
 }
 
-.section4__leftDiv-contactUs {
+[data-page="home"] .section4__leftDiv-contactUs {
     display: block;
-    font-size: var(--h20);
+    font-size: var(--text-basis-size);
     text-align: center;
     font-weight: 300;
     opacity: 0.8;
 }
-.section4__leftDiv-contactUs:hover { opacity: 1; }
+[data-page="home"] .section4__leftDiv-contactUs:hover { opacity: 1; }
 
-.section4-rightDiv {
+[data-page="home"] .section4-rightDiv {
     flex: 1;
     flex-grow: 8;
     display: flex;
@@ -216,63 +184,60 @@
     align-items: center;
     padding: clamp(1rem, 4vw, 10rem) 0;
 }
-.section4__rightDiv-hoursDiv {
+[data-page="home"] .section4__rightDiv-hoursDiv {
     display: flex;
     flex-direction: column;
     gap: clamp(1.6rem, 2vw, 2.8rem);
 }
 
-.hoursDiv {
+[data-page="home"] .hoursDiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: clamp(0.6rem, 1vw, 1.6rem);
-    font-size: clamp(0.8rem, 2vw, 2.6rem)
+    font-size: var(--text-basis-size)
 }
-.hours-title {
+[data-page="home"] .hours-title {
     font-weight: 300;
 }
-.hours-time {
+[data-page="home"] .hours-time {
     font-weight: 500;
 }
 
 
 /* Section5 */
 
-.section5-offersDiv {
+[data-page="home"] .section5-offersDiv {
     display: flex;
     justify-content: space-evenly;
     padding-bottom: clamp(2.4rem, 7vw, 10rem);
 }
-.offerDiv {
+[data-page="home"] .offerDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: clamp(0.4rem, 1vw, 2rem);
 }
-.offer-title {
-    font-size: var(--h40);
+[data-page="home"] .offer-title {
+    font-size: var(--font35);
     font-weight: 600;
 }
-.offer-text {
-    font-size: var(--h30);
+[data-page="home"] .offer-text {
+    font-size: var(--font15);
     font-weight: 400;
 }
 
 @media (max-width: 768px) {
-    .section1 {
-        height: 70vh;
-    }
-    .section1-button {
+    [data-page="home"] .section1-button {
         border: 1px solid var(--main-white);
     }
-    .section2-imageDiv, .section2-image {
+    [data-page="home"] .section2-imageDiv, [data-page="home"] .section2-image {
         height: 0px;
         width: 0px;
     }
 
-    .section2-information {
+    [data-page="home"] .section2-information {
         margin: 0;
         text-align: center;
     }
@@ -285,25 +250,25 @@
         top: 50;
     }
     
-    .section2__text-p {
+    [data-page="home"] .section2__text-p {
         text-align: left;
         line-height: 1.2;
     }
 
-    .section2-advantagesDiv {
+    [data-page="home"] .section2-advantagesDiv {
         margin-top: clamp(1rem, 2vw, 3rem);
         justify-content: space-evenly;
         gap: 0;
     }
-    .advantageDiv {
+    [data-page="home"] .advantageDiv {
         width: clamp(3rem, 15vw, 8.6rem)
     }
 
-    .section3-dishesDiv {
+    [data-page="home"] .section3-dishesDiv {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
     }
-    .cardImage {
+    [data-page="home"] .cardImage {
         width: 100%;
         height: 30vw;
     }
@@ -317,21 +282,21 @@
         width: 30px;
     }
     .section2-advantagesDiv { margin-bottom: 0; }
-    .section2-buttonDiv, .section2-button {
+    [data-page="home"] .section2-buttonDiv, [data-page="home"] .section2-button {
         height: 0px;
         width: 0px;
         visibility: hidden;
     }
-    .section3-dishesDiv {
+    [data-page="home"] .section3-dishesDiv {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
     }
-    .cardImage {
+    [data-page="home"] .cardImage {
         border-radius: 20px;
         height: 40vw;
     }
-    .section4-leftDiv { 
-        flex-grow: 5;
+    [data-page="home"] .section4-leftDiv { 
+        flex-grow: 6;
     }
-    .section4-rightDiv { flex-grow: 6; }
+    [data-page="home"] .section4-rightDiv { flex-grow: 5; }
 }
