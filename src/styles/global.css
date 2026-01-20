@@ -7,6 +7,7 @@
 
 
 html { font-size: 62.50%; }
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -14,27 +15,27 @@ html { font-size: 62.50%; }
     border: 0px solid red;
     font-family: "Inter", sans-serif;
 }
-ul {
-    list-style: none;
-}
+ul { list-style: none; }
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 section {
-    padding: clamp(2.4rem, 7vw, 10rem) clamp(1.8rem, 5vw, 4.8rem);
+    padding: clamp(3rem, 3vw, 6rem) clamp(2.2rem, 3vw, 7rem);
     padding-bottom: 0;
 }
 
 
 :root {
-    --main-red: #e52c34;
+    --accentColor: #ff9900;
     --main-white: #fcfafa;
     --black: #111010;
 
     --text-basis-size: clamp(0.6rem, 1.2vw + 0.8rem, 2.4rem);
     --scale-ratio: 1.20;
-
+    --font10: calc(var(--text-basis-size) / var(--scale-ratio) / var(--scale-ratio));
     --font15: calc(var(--text-basis-size) / var(--scale-ratio));
     --font25: calc(var(--text-basis-size) * var(--scale-ratio));
     --font30: calc(var(--font25) * var(--scale-ratio));
@@ -59,13 +60,13 @@ h1, h2, h3, h4, h5 {
     line-height: 1.3;
 }
 
-.accentColor { color: var(--main-red); }
+.accentColor { color: var(--accentColor); }
 .regWhite { color: var(--main-white); }
 .regBlack { color: var(--black); }
 
 .accentButton {
     color: var(--main-white);
-    background-color: var(--main-red);
+    background-color: var(--accentColor);
     padding: clamp(0.4rem, 1vw, 1.6rem) clamp(0.6rem, 1.5vw, 3.4rem);
     font-size: var(--font15);
     border-radius: 0.8rem;
@@ -88,22 +89,22 @@ h1, h2, h3, h4, h5 {
     position: relative;
     font-size: var(--font25);
     font-weight:300;
-    padding-left: 55px;
+    padding-left: clamp(40px, 6vw, 60px);
 }
 .sectionTitle::before {
     content: "";
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 0;
     display: inline-block;
-    height: 7px;
-    width: 45px;
-    border-radius: 1000px;
-    background-color: var(--main-red);
+    height: clamp(5px, 1vw, 8px);
+    width: clamp(35px, 5vw, 53px);
+    border-radius: 100px;
+    background-color: var(--accentColor);
 }
 
 .section-titleDiv {
-    margin: clamp(1rem, 1.5vw, 3rem) 0 clamp(1.2rem, 2.3vw, 3.8rem);
+    margin: clamp(0.6rem, 1vw, 1.6rem) 0;
 }
 .section-title {
     font-size: var(--font35);
@@ -169,7 +170,7 @@ header {
 }
 .nav-button:hover {opacity: 0.8;}
 .nav-button.active {
-    color: var(--main-red);
+    color: var(--accentColor);
 }
 
 
@@ -184,7 +185,7 @@ hr {
 }
 
 footer {
-    background-color: var(--main-red);
+    background-color: var(--accentColor);
     color: var(--main-white);
     padding: clamp(2.4rem, 5vw, 10rem) clamp(1.8rem, 5vw, 7rem);
 

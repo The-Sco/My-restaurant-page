@@ -1,4 +1,4 @@
-import { addButtosnActivation, addHeaderNavigation, createElement, appendElement, appendBySelector} from "./functions";
+import { addButtosnActivation, addHeaderNavigation, addFooterNavigation, createElement, appendElement, appendBySelector} from "./functions";
 
 const header = document.querySelector("header");
 
@@ -9,7 +9,7 @@ function createNavBar() {
 
     appendBySelector("#header-logoCont", createElement("div", "header-logo", "", "", "<h4><span id='header-logoRed' class='header-logoSpan accentColor'>Your</span><span id='header-logoRegular' class='header-logoSpan'>Logo</span></h4>"));
 
-    appendBySelector("#header-nav", createElement("ul", "", "nav", "", "<li><a href='#home' class='nav-button nav-home'>Home</a></li> <li><a href='#menu' class='nav-button nav-menu'>Menu</a></li> <li><a href='#about' class='nav-button nav-about'>About</a></li>"));
+    appendBySelector("#header-nav", createElement("ul", "", "nav", "", "<li><a href='#home' class='nav-button nav-home active'>Home</a></li> <li><a href='#menu' class='nav-button nav-menu'>Menu</a></li> <li><a href='#about' class='nav-button nav-about'>About</a></li>"));
 
     const navButtons = document.querySelectorAll(".nav-button");
     navButtons.forEach(button => {
@@ -61,4 +61,5 @@ export default function loadHeaderAndFooter() {
     createNavBar();
     createFooter();
     addHeaderNavigation();
+    addFooterNavigation();
 }

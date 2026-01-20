@@ -1,5 +1,6 @@
 import loadHomePage from "./home";
 import loadMenuPage from "./menu";
+import loadAboutPage from "./about";
 
 export function createElement(tag, id="", classes="", text="", innerHTML="", href="") {
     const element = document.createElement(tag);
@@ -55,6 +56,16 @@ export function addNavigation() {
             });
         });
     }
+    const navAbout = document.querySelectorAll("main .nav-about");
+    if (navAbout) {
+        navAbout.forEach(nav => {
+            nav.addEventListener("click", () => {
+                console.log("main about");
+                loadAboutPage();
+                changeActiveButton();
+            })
+        })
+    }
 }
 
 export function addHeaderNavigation() {
@@ -65,5 +76,27 @@ export function addHeaderNavigation() {
     document.querySelector("header .nav-menu").addEventListener("click", () => {
         console.log("header-menu");
         loadMenuPage();
+    })
+    document.querySelector("header .nav-about").addEventListener("click", () => {
+        console.log("header about");
+        loadAboutPage();
+    })
+}
+
+export function addFooterNavigation() {
+    document.querySelector("footer .nav-home").addEventListener("click", () => {
+        console.log("footer-home");
+        loadHomePage();
+        changeActiveButton();
+    })
+    document.querySelector("footer .nav-menu").addEventListener("click", () => {
+        console.log("footer-menu");
+        loadMenuPage();
+        changeActiveButton();
+    })
+    document.querySelector("footer .nav-about").addEventListener("click", () => {
+        console.log("footer about");
+        loadAboutPage();
+        changeActiveButton();
     })
 }

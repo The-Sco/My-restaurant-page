@@ -137,7 +137,7 @@
     display: flex;
     padding-left: 0;
     padding-right: 0;
-    box-shadow: 0 10px 8px -10px rgba(0, 0, 0, 0.178);
+    box-shadow: 0 14px 16px -18px rgb(29, 29, 29);
 }    
 
 
@@ -242,14 +242,6 @@
         text-align: center;
     }
     
-    .sectionTitle {
-        padding-left: 45px;
-    }
-    .sectionTitle::before {
-        width: 40px;
-        top: 50;
-    }
-    
     [data-page="home"] .section2__text-p {
         text-align: left;
         line-height: 1.2;
@@ -274,13 +266,7 @@
     }
 }
 @media (max-width:550px) {
-    .sectionTitle {
-        padding-left: 35px;
-    }
-    .sectionTitle::before {
-        height: 4px;
-        width: 30px;
-    }
+
     .section2-advantagesDiv { margin-bottom: 0; }
     [data-page="home"] .section2-buttonDiv, [data-page="home"] .section2-button {
         height: 0px;
