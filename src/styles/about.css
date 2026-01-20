@@ -13,7 +13,6 @@
 [data-page="about"] .section2 {
     display: flex;
     align-items: center;
-    padding-bottom: clamp(1.4rem, 2vw, 3.5rem);
     gap: clamp(1.4rem, 2vw, 4rem)
 }
 
@@ -143,12 +142,13 @@
 [data-page="about"] .section4-imagesDiv {
     grid-area: images;
     display: flex;
+    justify-content: space-evenly;
     gap: clamp(1rem, 1.4vw, 2rem);
 }
 
 [data-page="about"] .section4-image {
-    width: 50%;
-    height: min-content;
+    width: clamp(0%, 20vw, 350px);
+    height: clamp(0%, 25vw, 350px);
     object-fit: cover;
     border-radius: 4px;
 }
@@ -222,7 +222,7 @@
 }
 @media (max-width:680px) {
     [data-page="about"] .section3 {
-        padding: clamp(3rem, 3vw, 6rem) clamp(1.8rem, 3vw, 7rem);
+        padding: clamp(3rem, 3vw, 6rem) clamp(1.8rem, 3vw, 7rem) 0;
     }
     [data-page="about"] .offer-text { font-size: var(--font10); }
 }
