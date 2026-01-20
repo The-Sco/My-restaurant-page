@@ -1,11 +1,12 @@
 import { createElement, addNavigation } from "./functions";
-import styles from "./styles/about.css";
 import image1 from "./styles/assets/menu/sc2-1.webp";
 import image2 from "./styles/assets/menu/sc2-2.webp";
+import section4_1 from "./styles/assets/about/sc4-2.webp";
+import section4_2 from "./styles/assets/about/sc4-1.webp";
+import styles from "./styles/about.css";
+
 
 const main = document.querySelector("main");
-
-
 
 function createSection1() {
     main.appendChild(createElement("section", "", "section1"));
@@ -104,15 +105,54 @@ function createSection3() {
             </div>
         </div>
         <div class="section3-imageDiv">123</div>
+    </div>`;
+}
+
+function createSection4() {
+    main.appendChild(createElement("section", "", "section4"));
+    main.querySelector(".section4").innerHTML = 
+    `<div class="section4-imagesDiv">
+        <img class="section4-image" src="${section4_1}">
+        <img class="section4-image" src="${section4_2}">
     </div>
-    `;
+    <div class="section4-informationDiv">
+        <div class="section4-headDiv">
+            <div class="section4-titleDiv section-titleDiv">
+                <span class="section4-title section-title">Perfect Serving</span>
+            </div>
+            <div class="section4-sectionTitleDiv sectionTitleDiiv">
+                <span class="section4-sectionTitle sectionTitle">
+                    <span class="section4__sectionTitle-text sectionTitle-text">Brilliant Service</span>
+                </span>
+            </div>
+        </div>
+        <div class="section4-textDiv">
+            <p class="section4-text">
+                At the heart of our restaurant is a team dedicated to your complete 
+                satisfaction. Our staff is trained to provide attentive, anticipatory 
+                service with genuine warmth and professionalism. We strive to create a 
+                seamless and memorable experience, ensuring every detail of your visit 
+                is nothing short of excellent.
+            </p>
+        </div>
+        <div class="section4-buttonDiv">
+            <button class="section4-button button nav-menu" type="button">Know More</button>
+        </div>
+    </div>`;
 }
 
 export default function loadAboutPage() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
     window.location.hash = "about";
     main.dataset.page = "about";
     main.innerHTML = "";
     createSection1();
     createSection2();
     createSection3();
+    createSection4();
+    addNavigation();
 }

@@ -36,7 +36,7 @@
 [data-page="about"] .section2-sectionTitle::before {
     transform: translate(0, 280%);
     left: 40%;
-    }
+}
 
 [data-page="about"] .section2-imagesDiv {
     flex: 1;
@@ -57,7 +57,9 @@
 /* Section3 */
 
 
-[data-page="about"] .section3 { padding-left: 0; padding-right: 0; }
+[data-page="about"] .section3 {
+    padding-bottom: clamp(2rem, 4vw, 6rem);
+}
 
 [data-page="about"] .section3-headDiv {
     text-align: center;
@@ -65,26 +67,24 @@
 
 [data-page="about"] .section3-contentDiv {
     display: flex;
-    gap: 3rem;
+    gap: clamp(3rem, 3vw, 6rem);
     margin-top: clamp(2rem, 5vw, 4rem);
+}
+
+[data-page="about"] .section3-imageDiv {
+    flex: 3;
+    background-image: url("./assets/about/about-sc3-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
 }
 
 [data-page="about"] .section3-informationDiv {
     flex: 6;
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: clamp(2rem, 4vw, 6rem);
-    gap: clamp(0.4rem, 2vw, 4rem)
-}
-
-
-[data-page="about"] .section3-imageDiv {
-    flex: 3;
-    background-color: black;
-    background-image: url("./assets/about/about-sc3-bg.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    gap: clamp(1.2rem, 3vw, 4rem)
 }
 
 [data-page="about"] .offersDiv {
@@ -100,7 +100,7 @@
 
 [data-page="about"] .offersDiv-right {
     justify-content: end;
-    margin-top: clamp(5rem, 10vw, 8rem);
+    margin-top: clamp(3rem, 6vw, 8rem);
 }
 
 [data-page="about"] .offerDiv {
@@ -109,6 +109,9 @@
     text-align: center;
     align-items: center;
     gap: 1rem;
+    border: 1px solid rgba(20, 20, 20, 0.308);
+    padding: 0.6rem;
+    border-radius: 4px;
 }
 
 [data-page="about"] .offer-icon {
@@ -122,10 +125,64 @@
 
 [data-page="about"] .offer-text {
     font-size: var(--font15);
-    font-weight: 300;
     max-inline-size: 33ch;
 }
 
+
+/* Section4 */
+
+
+[data-page="about"] .section4 {
+    display: grid;
+    grid-template-areas: "images text";
+    gap: clamp(1rem, 2vw, 5rem);
+    padding-bottom: clamp(2rem, 4vw, 6rem);
+
+}
+
+[data-page="about"] .section4-imagesDiv {
+    grid-area: images;
+    display: flex;
+    gap: clamp(1rem, 1.4vw, 2rem);
+}
+
+[data-page="about"] .section4-image {
+    width: 50%;
+    height: min-content;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+[data-page="about"] .section4-informationDiv {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+[data-page="about"] .section4-headDiv {
+    text-align: center;
+}
+
+[data-page="about"] .section4-titleDiv { margin: 0; }
+[data-page="about"] .section4-sectionTitleDiv { margin-bottom: clamp(0.4rem, 1.2vw, 1.5rem); }
+
+[data-page="about"] .section4-text { 
+    max-inline-size: 66ch;
+    text-align: center;
+}
+
+[data-page="about"] .section4-buttonDiv {
+    display: flex;
+    justify-content: center;
+    margin: clamp(0.8rem, 1vw, 3rem) 0;
+}
+
+[data-page="about"] .section4-button {
+    border: 1px solid rgba(17, 17, 17, 0.767);
+    border-radius: 4px;
+}
 
 @media (max-width:1450px) {
     [data-page="about"] .offer-text { font-size: var(--font10); }
@@ -139,6 +196,21 @@
         visibility: hidden;
     }
     [data-page="about"] .offer-text { font-size: var(--font15); }
+
+    [data-page="about"] .section4 {
+        grid-template-areas: 
+        "text"
+        "images";
+    }
+
+    [data-page="about"] .section4-imagesDiv {
+        justify-content: space-evenly;
+    }
+
+    [data-page="about"] .section4-image {
+        width: 45%;
+        height: clamp(120px, 30vw, 350px);
+    }
 }
 @media (max-width:768px) {
     [data-page="about"] .section2 {

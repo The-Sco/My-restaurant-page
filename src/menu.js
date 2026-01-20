@@ -1,19 +1,17 @@
 import { createElement, appendBySelector, addNavigation } from "./functions";
-import styles from  "./styles/menu.css";
 import dessert1 from "./styles/assets/menu/recommends1.webp"
 import dessert2 from "./styles/assets/menu/recommends2.webp"
 import dessert3 from "./styles/assets/popular dishes/dessert2.webp";
 import dessert4 from "./styles/assets/popular dishes/dessert3.webp";
 import dessert5 from "./styles/assets/popular dishes/dessert6.webp";
 import dessert6 from "./styles/assets/menu/dessert6.webp"
-
-
 import meal1 from "./styles/assets/menu/sc2-1.webp";
 import meal2 from "./styles/assets/menu/sc2-2.webp";
 import meal3 from "./styles/assets/menu/recommends3.webp"
 import meal4 from "./styles/assets/popular dishes/meal1.webp";
 import meal5 from "./styles/assets/popular dishes/meal2.webp";
 import meal6 from "./styles/assets/popular dishes/meal4.webp";
+import styles from  "./styles/menu.css";
 
 
 const main = document.querySelector("main");
@@ -94,8 +92,7 @@ function createSection4() {
     main.querySelector(".section4").innerHTML = 
     `<div class="section4-titleDiv section-titleDiv">
         <span class="section4-title section-title">Check Our Tasty Menu</span>
-    </div>
-    `;
+    </div>`;
 }
 
 function createSection5() {
@@ -178,8 +175,7 @@ function createSection5() {
                 </div>
             </div
         </div>
-    </div>
-    `;
+    </div>`;
 }
 
 function createSection6() {
@@ -262,11 +258,15 @@ function createSection6() {
                 </div>
             </div
         </div>
-    </div>
-    `;
+    </div>`;
 }
 
 export default function loadMenuPage() {
+    window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+    });
     window.location.hash = "menu";
     main.dataset.page = "menu";
     main.innerHTML = "";

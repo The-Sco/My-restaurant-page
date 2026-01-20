@@ -30,7 +30,7 @@ function createFooter() {
                 <ul class="footer-linksUl">
                     <li class="footer-link"><a class="footer-link-a nav-home" href="#home">Home</a></li>
                     <li class="footer-link"><a class="footer-link-a nav-menu" href="#menu">Menu</a></li>
-                    <li class="footer-link"><a class="footer-link-a nav-about" href="#about-Us">About Us</a></li>
+                    <li class="footer-link"><a class="footer-link-a nav-about" href="#about-us">About Us</a></li>
                 </ul>
             </div>
         </div>

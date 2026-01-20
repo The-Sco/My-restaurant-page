@@ -33,7 +33,6 @@ export function changeActiveButton() {
     navButtons.forEach(button => {
         button.classList.remove("active");
     })
-    console.log(`.nav-${page}`)
     document.querySelector(`header .nav-${page}`).classList.add("active"); 
 }
 
@@ -60,7 +59,6 @@ export function addNavigation() {
     if (navAbout) {
         navAbout.forEach(nav => {
             nav.addEventListener("click", () => {
-                console.log("main about");
                 loadAboutPage();
                 changeActiveButton();
             })
@@ -70,32 +68,26 @@ export function addNavigation() {
 
 export function addHeaderNavigation() {
     document.querySelector("header .nav-home").addEventListener("click", () => {
-        console.log("header-home");
         loadHomePage();
     })
     document.querySelector("header .nav-menu").addEventListener("click", () => {
-        console.log("header-menu");
         loadMenuPage();
     })
     document.querySelector("header .nav-about").addEventListener("click", () => {
-        console.log("header about");
         loadAboutPage();
     })
 }
 
 export function addFooterNavigation() {
     document.querySelector("footer .nav-home").addEventListener("click", () => {
-        console.log("footer-home");
         loadHomePage();
         changeActiveButton();
     })
     document.querySelector("footer .nav-menu").addEventListener("click", () => {
-        console.log("footer-menu");
         loadMenuPage();
         changeActiveButton();
     })
     document.querySelector("footer .nav-about").addEventListener("click", () => {
-        console.log("footer about");
         loadAboutPage();
         changeActiveButton();
     })

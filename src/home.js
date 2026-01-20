@@ -1,5 +1,4 @@
 import { createElement, appendBySelector, addNavigation } from "./functions";
-
 import windowViewImage from "./styles/assets/cafe-view.webp";
 import meal1 from "./styles/assets/popular dishes/meal1.webp";
 import meal2 from "./styles/assets/popular dishes/meal2.webp";
@@ -7,9 +6,8 @@ import meal4 from "./styles/assets/popular dishes/meal4.webp";
 import dessert2 from "./styles/assets/popular dishes/dessert2.webp";
 import dessert3 from "./styles/assets/popular dishes/dessert3.webp";
 import dessert6 from "./styles/assets/popular dishes/dessert6.webp";
-
-
 import styles from "./styles/home.css";
+
 
 const main = document.querySelector("main");
 
@@ -154,8 +152,7 @@ function createSection4() {
                 </div>
             </div>
         </div>
-    </div>
-    `;
+    </div>`;
 }
 
 function createSection5() {
@@ -178,11 +175,15 @@ function createSection5() {
             <span class="offer-title">40+</span>
             <span class="offer-text">Awards</span>
         </div>
-    </div>
-    `
+    </div>`;
 }
 
 export default function loadHomePage() {
+    window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+    });
     window.location.hash = "home";
     main.dataset.page = "home";
     main.innerHTML = "";
