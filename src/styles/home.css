@@ -71,10 +71,11 @@
     margin-left: 3rem;
 }
 
+
 [data-page="home"] .section2__text-p {
     font-size: var(--font25);
     max-inline-size: 58ch;
-    margin: clamp(1rem, 3vw, 2rem) 0;
+    margin: clamp(0.4rem, 2.5vw, 2rem) 0;
 }
 
 [data-page="home"] .section2-advantagesDiv {
@@ -238,18 +239,20 @@
         border: 1px solid var(--main-white);
     }
     [data-page="home"] .section2-imageDiv, [data-page="home"] .section2-image {
+        position: absolute;
         height: 0px;
         width: 0px;
+        visibility: hidden;
     }
 
     [data-page="home"] .section2-information {
         margin: 0;
-        text-align: center;
+        text-align: center
     }
     
     [data-page="home"] .section2__text-p {
         text-align: left;
-        line-height: 1.2;
+        margin: 1rem auto;
     }
 
     [data-page="home"] .section2-advantagesDiv {

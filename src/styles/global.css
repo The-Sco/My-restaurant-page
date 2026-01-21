@@ -224,6 +224,9 @@ footer > hr {
     margin-right: clamp(1.4rem, 2.5vw, 2.8rem);
 }
 
+@media (max-width:768px) {
+    p, a { line-height: 1.5; }
+}
 
 @media (max-width: 550px) {
     .footer-contentDiv { max-width: 100%; }
